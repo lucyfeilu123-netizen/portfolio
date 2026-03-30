@@ -9,6 +9,7 @@ const withMDX = mdx({
 const nextConfig = {
   output: "export",
   basePath: "/portfolio",
+  assetPrefix: "/portfolio",
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
