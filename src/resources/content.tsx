@@ -5,11 +5,11 @@ const person: Person = {
   firstName: "Lucy",
   lastName: "Lu",
   name: `Lucy Lu`,
-  role: "Business Professional",
+  role: "Sales & Marketing Specialist",
   avatar: "/images/avatar.jpg",
   email: "lucyfeilu@outlook.com",
-  location: "America/Los_Angeles", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Chinese"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/Los_Angeles",
+  languages: ["English", "Chinese"],
 };
 
 const newsletter: Newsletter = {
@@ -26,6 +26,12 @@ const social: Social = [
     essential: true,
   },
   {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/lucyfeilu",
+    essential: true,
+  },
+  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
@@ -39,7 +45,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Dedicated professional with a passion for service and communication</>,
+  headline: <>Bilingual sales professional bridging cultures and building connections</>,
   featured: {
     display: false,
     title: (
@@ -55,7 +61,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Lucy, a San Francisco-based business professional with experience in <Text as="span" size="xl" weight="strong">sales</Text>, <Text as="span" size="xl" weight="strong">education</Text>, and <Text as="span" size="xl" weight="strong">customer service</Text>. I bring patience, communication skills, and a global perspective to everything I do.
+    I'm Lucy, a San Francisco-based <Text as="span" size="xl" weight="strong">Sales & Marketing Specialist</Text> with a global perspective. From international e-commerce to building websites and automation tools, I bring <Text as="span" size="xl" weight="strong">creativity</Text>, <Text as="span" size="xl" weight="strong">problem-solving</Text>, and a passion for connecting with people.
 </>
   ),
 };
@@ -81,17 +87,51 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Lucy is a San Francisco-based business professional with a Bachelor of Arts in Business.
-        With diverse experience spanning sales, education, childcare, and customer service across
-        both the US and China, she brings strong communication skills, patience, and a collaborative
-        spirit to every role.
+        Lucy is a kind and easy-going professional who moved from China to the United States,
+        bringing a bilingual skill set and a global perspective. She's a fast learner who thrives
+        on multitasking and solving problems in creative ways. Whether it's closing international
+        sales deals, building websites, or learning culinary arts, Lucy stays focused and brings
+        energy to everything she does. When she's not working, you'll find her meditating in the
+        morning, walking her adorable dog Gabri, or exploring the cultural differences between
+        East and West.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
+      {
+        company: "Job Corps",
+        timeframe: "Jan 2026 - Present",
+        role: "Culinary Art Student – San Francisco, CA",
+        achievements: [
+          <>
+            Enrolled in the Culinary Art program, rapidly completing training targets as a fast learner.
+          </>,
+          <>
+            Developing professional culinary skills while balancing self-study in coding and personal projects.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Self-Employed / Freelance",
+        timeframe: "Jan 2025 - Dec 2025",
+        role: "Student & Self-Taught Developer – San Francisco, CA",
+        achievements: [
+          <>
+            Focused on earning GED and attending courses at City College of San Francisco (CCSF).
+          </>,
+          <>
+            Self-studied coding and completed Decode Academy courses, building websites and automation tools.
+          </>,
+          <>
+            Attended daily morning meditation classes to maintain focus and well-being.
+          </>,
+        ],
+        images: [],
+      },
       {
         company: "Babysitter / Caretaker",
         timeframe: "Oct 2024 - Jan 2025",
@@ -159,9 +199,21 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Education",
     institutions: [
+      {
+        name: "Job Corps – Culinary Art Program",
+        description: <>Currently enrolled since early 2026. Fast-tracking training completion.</>,
+      },
+      {
+        name: "Decode Academy",
+        description: <>Completed coding courses in web development and automation tools.</>,
+      },
+      {
+        name: "City College of San Francisco (CCSF)",
+        description: <>Attended courses while preparing for GED (2025).</>,
+      },
       {
         name: "Henan University of Animal Husbandry and Economy",
         description: <>Bachelor of Arts in Business – Graduated Jul. 2023. Football (Soccer) and Marathon Club Member.</>,
@@ -169,13 +221,29 @@ const about: About = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Skills & Interests",
     skills: [
       {
-        title: "Professional Skills",
+        title: "Sales & Marketing",
         description: (
-          <>Customer Service, Communication, Cooperation, Patience</>
+          <>International e-commerce, social media marketing, customer relationship management, product listing optimization, and customs negotiation.</>
+        ),
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Digital Tools",
+        description: (
+          <>Excel, Photoshop, Canva, social media platforms (Instagram, WeChat, WhatsApp, Telegram), website building, and automation tools.</>
+        ),
+        tags: [],
+        images: [],
+      },
+      {
+        title: "Soft Skills",
+        description: (
+          <>Bilingual (English & Chinese), multitasking, creative problem-solving, patience, fast learner, strong focus and dedication.</>
         ),
         tags: [],
         images: [],
@@ -183,7 +251,7 @@ const about: About = {
       {
         title: "Interests",
         description: (
-          <>Soccer, Pop Music, Anime</>
+          <>Soccer, Pop Music, Anime, Meditation, Cooking, Dogs (proud mom of Gabri!)</>
         ),
         tags: [],
         images: [],
@@ -195,7 +263,7 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about my experiences...",
+  title: "Lucy's Blog",
   description: `Read what ${person.name} has been up to recently`,
 };
 
