@@ -2,48 +2,27 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Lucy",
+  lastName: "Lu",
+  name: `Lucy Lu`,
+  role: "Business Professional",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "lucyfeilu@outlook.com",
+  location: "America/Los_Angeles", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Chinese"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>Updates on my latest work and experiences</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
-    essential: true,
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://github.com/lucyfeilu123-netizen",
     essential: true,
   },
   {
@@ -60,12 +39,12 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Dedicated professional with a passion for service and communication</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Featured</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
@@ -76,7 +55,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Lucy, a San Francisco-based business professional with experience in <Text as="span" size="xl" weight="strong">sales</Text>, <Text as="span" size="xl" weight="strong">education</Text>, and <Text as="span" size="xl" weight="strong">customer service</Text>. I bring patience, communication skills, and a global perspective to everything I do.
 </>
   ),
 };
@@ -85,7 +64,7 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from San Francisco, CA`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -94,7 +73,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,9 +81,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Lucy is a San Francisco-based business professional with a Bachelor of Arts in Business.
+        With diverse experience spanning sales, education, childcare, and customer service across
+        both the US and China, she brings strong communication skills, patience, and a collaborative
+        spirit to every role.
       </>
     ),
   },
@@ -113,41 +93,65 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Babysitter / Caretaker",
+        timeframe: "Oct 2024 - Jan 2025",
+        role: "Childcare Provider – San Francisco, CA",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Took care of 3 children (ages 2, 6, and 7) every weekday, managing school transportation,
+            meals, activities, and bedtime routines.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Maintained organized and clean living spaces while ensuring the children's safety and well-being.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "CKF Technology Company",
+        timeframe: "Oct 2022 - Jul 2024",
+        role: "Sales Representative – Shenzhen, China",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Sold electronics products on online retail storefronts, providing comprehensive pre- and
+            after-sales services with a focus on customer satisfaction.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Promoted products across social media platforms including WhatsApp, WeChat, and Telegram,
+            tracking click-through rates and adjusting listings based on customer trends.
+          </>,
+          <>
+            Negotiated shipping and handling services through customs clearance for international orders.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Henan University of Economics and Law",
+        timeframe: "Sep 2021 - Jan 2022",
+        role: "Server – Zhengzhou, China",
+        achievements: [
+          <>
+            Served pre-made hotpot for over 100 college students daily during lunch and dinner rushes.
+          </>,
+          <>
+            Took customer orders and operated the register efficiently during peak hours.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Sibo Education",
+        timeframe: "May 2020 - Aug 2020",
+        role: "Teacher – Guangzhou, China",
+        achievements: [
+          <>
+            Taught 20–30 students: Chinese for 2nd and 3rd grade levels, and English for 8th and 9th
+            grade levels, focusing on grammar, pronunciation, and vocabulary.
+          </>,
+          <>
+            Led field trips where students learned English through practical activities, and managed
+            students during lunch, recess, and field trips.
           </>,
         ],
         images: [],
@@ -156,77 +160,33 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Henan University of Animal Husbandry and Economy",
+        description: <>Bachelor of Arts in Business – Graduated Jul. 2023. Football (Soccer) and Marathon Club Member.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Skills & Interests",
     skills: [
       {
-        title: "Figma",
+        title: "Professional Skills",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Customer Service, Communication, Cooperation, Patience</>
         ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Interests",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Soccer, Pop Music, Anime</>
         ),
-        tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        tags: [],
+        images: [],
       },
     ],
   },
@@ -235,19 +195,15 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about my experiences...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `Projects and experiences by ${person.name}`,
 };
 
 const gallery: Gallery = {
@@ -255,8 +211,6 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
