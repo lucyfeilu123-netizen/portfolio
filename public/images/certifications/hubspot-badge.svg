@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- Outer seal rosette -->
+  <g transform="translate(60,60)">
+    <path d="M0,-55 L6,-48 L14,-52 L18,-44 L26,-46 L28,-37 L37,-37 L37,-28 L46,-26 L44,-18 L52,-14 L48,-6 L55,0 L48,6 L52,14 L44,18 L46,26 L37,28 L37,37 L28,37 L26,46 L18,44 L14,52 L6,48 L0,55 L-6,48 L-14,52 L-18,44 L-26,46 L-28,37 L-37,37 L-37,28 L-46,26 L-44,18 L-52,14 L-48,6 L-55,0 L-48,-6 L-52,-14 L-44,-18 L-46,-26 L-37,-28 L-37,-37 L-28,-37 L-26,-46 L-18,-44 L-14,-52 L-6,-48 Z"
+      fill="#d4956b" opacity="0.9"/>
+    <!-- Inner white circle -->
+    <circle cx="0" cy="0" r="38" fill="white"/>
+    <!-- Graduation cap icon -->
+    <g transform="translate(0, -2)">
+      <!-- Cap top -->
+      <polygon points="0,-18 28,0 0,8 -28,0" fill="#d4956b"/>
+      <!-- Cap brim line -->
+      <line x1="-20" y1="2" x2="20" y2="2" stroke="#d4956b" stroke-width="1.5"/>
+      <!-- Tassel string -->
+      <line x1="22" y1="-2" x2="22" y2="14" stroke="#d4956b" stroke-width="2"/>
+      <circle cx="22" cy="16" r="3" fill="#d4956b"/>
+      <!-- Cap base band -->
+      <path d="M-16,4 Q-16,16 0,18 Q16,16 16,4" fill="none" stroke="#d4956b" stroke-width="2"/>
+    </g>
+  </g>
+</svg>

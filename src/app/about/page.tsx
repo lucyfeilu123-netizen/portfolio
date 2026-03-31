@@ -45,6 +45,11 @@ export default function About() {
       items: about.studies.institutions.map((institution) => institution.name),
     },
     {
+      title: about.certifications.title,
+      display: about.certifications.display,
+      items: about.certifications.items.map((item) => item.name),
+    },
+    {
       title: about.technical.title,
       display: about.technical.display,
       items: about.technical.skills.map((skill) => skill.title),
@@ -276,6 +281,43 @@ export default function About() {
                       {institution.description}
                     </Text>
                   </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.certifications.display && (
+            <>
+              <Heading as="h2" id={about.certifications.title} variant="display-strong-s" marginBottom="m">
+                {about.certifications.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.certifications.items.map((cert, index) => (
+                  <Row key={`${cert.name}-${index}`} fillWidth gap="l" vertical="center">
+                    {cert.badge && (
+                      <Media
+                        src={cert.badge}
+                        alt={`${cert.name} badge`}
+                        width={80}
+                        height={80}
+                        radius="m"
+                        style={{ flexShrink: 0 }}
+                      />
+                    )}
+                    <Column gap="4">
+                      <Text id={cert.name} variant="heading-strong-l">
+                        {cert.name}
+                      </Text>
+                      {cert.description && (
+                        <Text variant="body-default-s" onBackground="neutral-weak">
+                          {cert.description}
+                        </Text>
+                      )}
+                      <Text variant="body-default-s" onBackground="brand-weak">
+                        Provider: {cert.provider}
+                      </Text>
+                    </Column>
+                  </Row>
                 ))}
               </Column>
             </>

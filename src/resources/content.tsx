@@ -220,6 +220,18 @@ const about: About = {
       },
     ],
   },
+  certifications: {
+    display: true,
+    title: "Certifications",
+    items: [
+      {
+        name: "HubSpot Inbound Certification",
+        provider: "HubSpot",
+        description: "Verified by Upwork",
+        badge: "/images/certifications/hubspot-badge.svg",
+      },
+    ],
+  },
   technical: {
     display: true,
     title: "Skills & Interests",
