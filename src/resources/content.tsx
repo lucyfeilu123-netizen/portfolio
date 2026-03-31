@@ -7,7 +7,7 @@ const person: Person = {
   name: `Lucy Lu`,
   role: "Sales & Marketing Specialist",
   avatar: "/portfolio/images/avatar.jpg",
-  email: "lucyfeilu@outlook.com",
+  email: "lucyfeilu123@gmail.com",
   location: "America/Los_Angeles",
   languages: ["English", "Chinese"],
 };

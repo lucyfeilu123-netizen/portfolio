@@ -1,9 +1,10 @@
 "use client";
 
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 
 interface GlobeProps {
   size?: number;
+  className?: string;
 }
 
 const MARKERS = [
@@ -58,7 +59,23 @@ function project(x: number, y: number, z: number, cx: number, cy: number, fov: n
   return [x * scale + cx, y * scale + cy];
 }
 
-export default function InteractiveGlobe({ size = 400 }: GlobeProps) {
+export default function InteractiveGlobe({ size = 400, className }: GlobeProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [responsiveSize, setResponsiveSize] = useState(size);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.offsetWidth;
+        setResponsiveSize(Math.min(size, containerWidth - 20));
+      } else {
+        setResponsiveSize(Math.min(size, window.innerWidth - 40));
+      }
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, [size]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rotYRef = useRef(0.4);
   const rotXRef = useRef(0.3);
@@ -243,12 +260,14 @@ export default function InteractiveGlobe({ size = 400 }: GlobeProps) {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{ width: size, height: size, cursor: "grab" }}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-    />
+    <div ref={containerRef} style={{ width: "100%", maxWidth: size, display: "flex", justifyContent: "center" }}>
+      <canvas
+        ref={canvasRef}
+        style={{ width: responsiveSize, height: responsiveSize, cursor: "grab", touchAction: "none" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+      />
+    </div>
   );
 }
