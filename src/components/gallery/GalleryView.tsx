@@ -42,20 +42,29 @@ export default function GalleryView() {
 
       {/* Center column — sticky */}
       <div className={styles.stickyColumn}>
-        {centerImages.slice(0, 3).map((image, index) => (
-          <div
-            key={`center-${index}`}
-            className={`${styles.stickyImageWrapper} ${styles.fadeIn}`}
-            onMouseMove={handleMouseMove}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              className={styles.stickyImage}
-              loading="eager"
-            />
-          </div>
-        ))}
+        {centerImages.slice(0, 3).map((image, index) => {
+          // Per-image focus: where the face/subject is
+          const focusPositions = [
+            "center 65%",  // Golden Gate close — your face is in lower portion
+            "center 30%",  // Pink jacket — your face is in upper portion
+            "center 55%",  // Gabri on bed — Gabri's face is in lower-center
+          ];
+          return (
+            <div
+              key={`center-${index}`}
+              className={`${styles.stickyImageWrapper} ${styles.fadeIn}`}
+              onMouseMove={handleMouseMove}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className={styles.stickyImage}
+                style={{ objectPosition: focusPositions[index] }}
+                loading="eager"
+              />
+            </div>
+          );
+        })}
       </div>
 
       {/* Right column — scrolls */}
