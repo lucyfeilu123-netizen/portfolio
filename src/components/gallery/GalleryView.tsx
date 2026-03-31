@@ -47,7 +47,7 @@ export default function GalleryView() {
           const focusPositions = [
             "center 65%",  // Golden Gate close — your face is in lower portion
             "center 30%",  // Pink jacket — your face is in upper portion
-            "center 55%",  // Gabri on bed — Gabri's face is in lower-center
+            "35% 55%",     // Gabri on bed — face is in lower-left area
           ];
           return (
             <div
