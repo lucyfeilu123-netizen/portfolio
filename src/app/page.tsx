@@ -15,6 +15,7 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import InteractiveGlobe from "@/components/InteractiveGlobe";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -100,6 +101,39 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      <RevealFx translateY="16" delay={0.6}>
+        <Column fillWidth horizontal="center" gap="m" paddingY="l">
+          <Row fillWidth horizontal="center" s={{ direction: "column" }} gap="l" vertical="center">
+            <Column flex={1} gap="m" paddingX="l">
+              <Heading as="h2" variant="display-strong-s">
+                Global Perspective
+              </Heading>
+              <Text onBackground="neutral-weak" variant="body-default-l">
+                From Shenzhen to San Francisco — I bring international business experience,
+                bilingual communication, and cross-cultural understanding to every opportunity.
+                Drag the globe to explore my connections.
+              </Text>
+              <Row gap="l" paddingTop="m">
+                <Column>
+                  <Text variant="heading-strong-l">2</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak">Countries</Text>
+                </Column>
+                <Column>
+                  <Text variant="heading-strong-l">5+</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak">Cities</Text>
+                </Column>
+                <Column>
+                  <Text variant="heading-strong-l">2</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak">Languages</Text>
+                </Column>
+              </Row>
+            </Column>
+            <Column flex={1} horizontal="center">
+              <InteractiveGlobe size={380} />
+            </Column>
+          </Row>
+        </Column>
+      </RevealFx>
       <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} />
       </RevealFx>
