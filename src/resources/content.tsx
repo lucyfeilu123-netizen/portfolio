@@ -168,7 +168,7 @@ const about: About = {
       },
       {
         company: "Henan University of Economics and Law",
-        timeframe: "Sep 2021 - Jan 2022",
+        timeframe: "Sep 2019 - Jul 2023",
         role: "Server – Zhengzhou, China",
         achievements: [
           <>
@@ -280,29 +280,12 @@ const gallery: Gallery = {
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
   images: [
+    // Left column (indices 0, 3, 6, 9, 12)
+    // Center sticky column (indices 1, 4, 7, 10, 13) — best face/subject shots here
+    // Right column (indices 2, 5, 8, 11, 14)
     {
       src: "/portfolio/images/gallery/horizontal-1.jpg",
       alt: "Lucy at SFMOMA in San Francisco",
-      orientation: "horizontal",
-    },
-    {
-      src: "/portfolio/images/gallery/vertical-1.jpg",
-      alt: "Fun photo with a skeleton on a park bench",
-      orientation: "vertical",
-    },
-    {
-      src: "/portfolio/images/gallery/horizontal-2.jpg",
-      alt: "Lucy at the Unconditional Surrender statue in San Diego",
-      orientation: "horizontal",
-    },
-    {
-      src: "/portfolio/images/gallery/vertical-2.jpg",
-      alt: "Lucy wearing a beret and headphones at the park",
-      orientation: "vertical",
-    },
-    {
-      src: "/portfolio/images/gallery/horizontal-3.jpg",
-      alt: "Lucy by the bay with the Golden Gate Bridge",
       orientation: "horizontal",
     },
     {
@@ -311,14 +294,49 @@ const gallery: Gallery = {
       orientation: "vertical",
     },
     {
+      src: "/portfolio/images/gallery/horizontal-2.jpg",
+      alt: "Lucy at the Unconditional Surrender statue in San Diego",
+      orientation: "horizontal",
+    },
+    {
+      src: "/portfolio/images/gallery/vertical-1.jpg",
+      alt: "Fun photo with a skeleton on a park bench",
+      orientation: "vertical",
+    },
+    {
+      src: "/portfolio/images/gallery/vertical-8.jpg",
+      alt: "Lucy in a pink jacket",
+      orientation: "vertical",
+    },
+    {
       src: "/portfolio/images/gallery/horizontal-4.jpg",
       alt: "Christmas morning by the tree",
+      orientation: "horizontal",
+    },
+    {
+      src: "/portfolio/images/gallery/vertical-2.jpg",
+      alt: "Lucy wearing a beret and headphones at the park",
+      orientation: "vertical",
+    },
+    {
+      src: "/portfolio/images/gallery/horizontal-6.jpg",
+      alt: "Gabri the dog relaxing on the bed",
+      orientation: "horizontal",
+    },
+    {
+      src: "/portfolio/images/gallery/horizontal-3.jpg",
+      alt: "Lucy by the bay with the Golden Gate Bridge",
       orientation: "horizontal",
     },
     {
       src: "/portfolio/images/gallery/vertical-4.jpg",
       alt: "Lucy at the ocean cliff with sunset",
       orientation: "vertical",
+    },
+    {
+      src: "/portfolio/images/gallery/horizontal-7.jpg",
+      alt: "Gabri walking through autumn leaves",
+      orientation: "horizontal",
     },
     {
       src: "/portfolio/images/gallery/vertical-5.jpg",
@@ -339,11 +357,6 @@ const gallery: Gallery = {
       src: "/portfolio/images/gallery/vertical-7.jpg",
       alt: "Gabri the dog lounging on the floor",
       orientation: "vertical",
-    },
-    {
-      src: "/portfolio/images/gallery/horizontal-6.jpg",
-      alt: "Gabri the dog relaxing on the bed",
-      orientation: "horizontal",
     },
   ],
 };

@@ -1,63 +1,78 @@
 "use client";
 
-import { Media } from "@once-ui-system/core";
+import { useRef, useCallback } from "react";
 import { gallery } from "@/resources";
 import styles from "./StickyGallery.module.scss";
 
 export default function GalleryView() {
   const images = gallery.images;
 
-  // Split images into 3 columns: left scrolling, center sticky, right scrolling
+  // Split images into 3 columns
   const leftImages = images.filter((_, i) => i % 3 === 0);
   const centerImages = images.filter((_, i) => i % 3 === 1);
   const rightImages = images.filter((_, i) => i % 3 === 2);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    e.currentTarget.style.setProperty("--mouse-x", `${x}%`);
+    e.currentTarget.style.setProperty("--mouse-y", `${y}%`);
+  }, []);
 
   return (
     <div className={styles.gallery}>
       {/* Left column — scrolls */}
       <div className={styles.column}>
         {leftImages.map((image, index) => (
-          <figure key={`left-${index}`}>
-            <Media
-              enlarge
-              radius="m"
-              sizes="(max-width: 768px) 50vw, 33vw"
+          <div
+            key={`left-${index}`}
+            className={`${styles.imageWrapper} ${styles.fadeIn}`}
+            onMouseMove={handleMouseMove}
+          >
+            <img
               src={image.src}
               alt={image.alt}
-              aspectRatio="3 / 4"
+              className={`${styles.image} ${styles.scrollImage}`}
+              loading={index < 2 ? "eager" : "lazy"}
             />
-          </figure>
+          </div>
         ))}
       </div>
 
       {/* Center column — sticky */}
       <div className={styles.stickyColumn}>
         {centerImages.slice(0, 3).map((image, index) => (
-          <figure key={`center-${index}`} style={{ overflow: "hidden", borderRadius: "var(--radius-m)" }}>
-            <Media
-              enlarge
-              radius="m"
-              sizes="(max-width: 768px) 50vw, 33vw"
+          <div
+            key={`center-${index}`}
+            className={`${styles.stickyImageWrapper} ${styles.fadeIn}`}
+            onMouseMove={handleMouseMove}
+          >
+            <img
               src={image.src}
               alt={image.alt}
+              className={styles.stickyImage}
+              loading="eager"
             />
-          </figure>
+          </div>
         ))}
       </div>
 
       {/* Right column — scrolls */}
       <div className={styles.column}>
         {rightImages.map((image, index) => (
-          <figure key={`right-${index}`}>
-            <Media
-              enlarge
-              radius="m"
-              sizes="(max-width: 768px) 50vw, 33vw"
+          <div
+            key={`right-${index}`}
+            className={`${styles.imageWrapper} ${styles.fadeIn}`}
+            onMouseMove={handleMouseMove}
+          >
+            <img
               src={image.src}
               alt={image.alt}
-              aspectRatio="3 / 4"
+              className={`${styles.image} ${styles.scrollImage}`}
+              loading={index < 2 ? "eager" : "lazy"}
             />
-          </figure>
+          </div>
         ))}
       </div>
     </div>
